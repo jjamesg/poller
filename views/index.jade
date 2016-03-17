@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  .menu 
+    a(href='/').title Poller 
+    if(!user)
+      a.menu-right(href="#create", rel="leanModal") CREATE ACCOUNT
+      a.menu-right(href="#login", rel="leanModal") LOGIN
+    if(user)
+      button.user #{user.username} &#9660;
+    .dropdown
+      a(href='/mypolls') My polls
+      a(href='/logout') Log out
+    
+  //login popup
+  #login.popup(style='display:none') 
+    .header LOGIN
+    .form-holder
+      p Sign in to view your polls
+      form(role='form', action="/login",method="post", style='max-width: 300px;')
+        input(type='text', name="username", placeholder='Enter Username')
+        input(type='password', name="password", placeholder='Password')
+        button(type='submit') Submit
+        button.modal_close(type="button") Cancel
+
+  //register popup
+  #create.popup(style='display:none') 
+    .header REGISTER
+    .form-holder
+      p Create an account to save your polls.
+      form(role='form', action="/register",method="post", style='max-width: 300px;')
+        input(type='text', name="username", placeholder='Enter Username')
+        input(type='password', name="password", placeholder='Password')
+        button(type='submit') Submit
+        button.modal_close(type="button") Cancel
+        
+  #contentR
+  if(view == 'main')
+    script(type='text/babel', src='/scripts/main.js')
+  if(view == 'poll')
+    script(type='text/babel', src='/scripts/poll.js')
+  if(view == 'mypolls')
+    script(type='text/babel', src='/scripts/mypolls.js')

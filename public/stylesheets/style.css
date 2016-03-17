@@ -1,0 +1,388 @@
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+html {
+    padding: 0%;
+}
+
+body {
+    margin: 0;
+    background-color: #6fb8bd;
+    font-family: 'Roboto', sans-serif;
+    position: static;
+}
+
+.menu{
+    height: 60px;
+    background-color: #4a7a7d;
+    text-align: left;
+    position: relative;
+}
+
+
+.title{
+    font-family: 'Poiret One', cursive;
+    padding: 1%;
+    font-size: 40px;
+    height: 50px;
+    color: #eee;
+    float: left;
+    text-decoration: none;
+}
+
+.user{
+    font-size: 16px;
+    background-color: #4a7a7d;
+    border-style: none;
+    color: #eee;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    height: 100%;
+}
+
+.user:hover ~ .dropdown {
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    z-index: 100;
+    right: 0px;
+    top: 60px;
+    background-color: white;
+    display: none;
+}
+
+.dropdown:hover {
+    display: block;
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: #666;
+    display: block;
+    padding: 12px 32px;
+    border-top: 1px solid #ddd;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.drop-option {
+}
+
+.menu-right{
+    float: right;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #eee;
+}
+
+.menu-right:hover{
+    text-decoration: underline;
+}
+
+/* login/register popups */
+
+.popup {
+    background-color: #fff ;
+    color: #666;
+}
+
+.popup .header {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #F4F4F2;
+}
+
+.popup .form-holder {
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.form-holder input {
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 85%;
+    display: block;
+}
+
+.form-holder button {
+    background-color: #F4F4F2;
+    color: #666;
+    border: 0px solid #ddd;
+    padding: 10px;
+    margin: 10px 10px 10px 0px;
+}
+
+.main {
+    background-color: #6fb8bd;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    
+}
+
+.tab-container {
+    height: 50px;
+    position: relative;
+}
+
+.tab {
+    width: 80px;
+    padding: 3% 0 3% 0;
+    text-align: center;
+    font-size: 15px;
+    background-color: #FFF;
+    color: #51868a;
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    cursor: pointer;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+
+
+#settings{
+    left: 83px;
+    padding: 2% 0 2% 0;
+    background-color: #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+#share {
+    left: 166px;
+    padding: 2% 0 2% 0;
+    background-color: #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+
+}
+
+.poll-form {
+    text-align: center;
+    padding: 2%;
+    background-color: #FFF;
+}
+
+
+.question-in {
+    font-size: 25px;
+    padding: 2%;
+    width: 95%;
+    margin-bottom: 3%;
+    border: 1px solid #ddd;
+}
+
+.answer {
+    margin-bottom: 3%;
+}
+
+.answer-in {
+    font-size: 15px;
+    padding: 2%;
+    width: 86%;
+    border: 1px solid #ddd;
+    border-right: 0px;
+}
+
+.delete-answer {
+    font-size: 15px;
+    padding: 2%;
+    color: #355e65;
+    background-color: #ff8080;
+    width: 9%;
+    border: 1px solid #ff8080;
+    border-radius: 0px 3px 3px 0px;
+    cursor: pointer;
+}
+
+.add-answer {
+    border-radius: 100%;
+    color: #6fb8bd;
+    background-color: white;
+    font-size: 20px;
+    border: 2px solid #6fb8bd;
+    cursor: pointer;
+    
+}
+
+.submit {
+    display: block;
+    padding: 2%;
+    margin-top: 3%;
+    width: 100%;
+    background: #00cc66;
+    color: #fff;
+    font-size: 25px;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-form {
+    background-color: white;
+    padding: 2%;
+    padding-top: 4%;
+}
+
+.url-box {
+    margin-top: 5px;
+    width: 96%;
+    font-size: 15px;
+    padding: 2%;
+    border: 1px solid #ddd;
+}
+
+.new-poll-btn {
+    display: block;
+    padding: 2%;
+    margin-top: 5%;
+    width: 100%;
+    background: #00cc66;
+    color: #fff;
+    font-size: 25px;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-form{
+    padding: 2%;
+    background-color: #FFF;
+    height: 200px;
+}
+
+.poll-main {
+    padding: 2%;
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 4%;
+}
+
+.question-out {
+    padding: 2%;
+    color: #fff;
+    background-color: #6fb8bd;
+    font-size: 30px;
+}
+
+.answer-out {
+    padding: 2%;
+}
+
+.tot-votes {
+    border-top: 1px solid #ddd;
+    padding: 2%;
+}
+
+.half-col {
+    width: 50%;
+    display: inline;
+}
+
+.vote {
+    padding: 2% 6% 2% 6%;
+    margin: 3% 3% 0% 0%;
+    background: #00cc66;
+    color: #fff;
+    font-size: 25px;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* mypolls page */
+
+.mypolls {
+    overflow: hidden;
+    width: 92%;
+    padding: 2%;
+}
+
+.myrow {
+    overflow: hidden;
+    color: #666;
+    font-size: 16px;
+    margin: 1px;
+    
+}
+
+.myrow a {
+    color: #666;
+    font-size: 16px;
+    text-decoration: none
+}
+
+.myrow:hover .myquestion {
+    background-color: rgba(220, 220, 220, .7);
+}
+
+.myrow:hover .myvotes {
+    background-color: rgba(220, 220, 220, .7);
+}
+
+.myquestion {
+    padding: 2px 4px;
+    float: left;
+    width: 85%;
+    background-color: rgba(220, 220, 220, .5);
+    cursor: pointer;
+}
+
+.myvotes {
+    float: left;
+    width: 8%;
+    padding: 2px 4px;
+    background-color: rgba(220, 220, 220, .5);
+    cursor: pointer;
+}
+
+.mydelete {
+    color: #666;
+    background: #ff8080;
+    border: none;
+    padding: 2px 4px;
+    height:100%;
+    float: left;
+    height: 23px;
+    cursor: pointer;
+}
+
+.label {
+    color: #444;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.myq {
+    width: 84.5%;
+    padding: 2px 4px;
+    float: left;
+    margin: 10px 0px 1px 0px;
+}
+
+.myv {
+    padding: 2px 4px;
+    width: 10%;
+    float: left;
+    margin: 10px 0px 1px 0px;
+}
