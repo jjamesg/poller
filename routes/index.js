@@ -24,7 +24,7 @@ router.get('/register', function(req, res) {
 router.post('/register', function(req, res) {
     Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
         if (err) {
-            return res.render('register', {info: "Sorry. That username already exists. Try again."});
+            return res.send("Username already exists.");
         }
 
         passport.authenticate('local')(req, res, function () {
@@ -38,10 +38,32 @@ router.get('/login/:x?', function(req, res) {
     res.render('login', { user : req.user, error : error });
 });
 
-router.post('/login', 
-    passport.authenticate('local', { successRedirect: '/',
-                                     failureRedirect: '/'         
-}));
+//router.post('/login', passport.authenticate('local', {successRedirect: '/'}));
+
+router.post('/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        console.log(err, user, info);
+        if(err) return next(err);
+        if(!user) return res.send('Invalid username or password.');
+        req.logIn(user, function(err) {
+            if (err) { return next(err); }
+            return res.redirect('/')
+        });
+    })(req, res, next)
+});
+
+/*router.post('/login', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        console.log(err, user, info)
+        if (err) { return next(err); }
+        if (!user) { console.log('no user') }
+        req.logIn(user, function(err) {
+            if (err) { return next(err); }
+            return res.redirect('/users/' + user.username);
+        });
+    })(req, res, next);
+});*/
+
 
 router.get('/logout', function(req, res) {
     req.logout();

@@ -46,7 +46,7 @@ var Main = React.createClass({
                     <div className='myrow'>
                         <a href={'/poll/' + poll._id}>
                             <div className='myquestion'>{poll.question}</div>
-                            <div className='myvotes'>{poll.votes}</div>
+                            <div className='myvotes'>{poll.votes.reduce((x,y)=>x+y)}</div>
                         </a>
                         <button className='mydelete' id={poll._id} onClick={this.delete}>X</button>
                     </div>
