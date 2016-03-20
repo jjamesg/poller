@@ -129,12 +129,15 @@ body {
     margin: 10px 10px 10px 0px;
 }
 
+/* main */
+
 .main {
     background-color: #6fb8bd;
     width: 75%;
     margin: 0 auto;
     margin-top: 10%;
     margin-bottom: 10%;
+    max-width: 600px;
     
 }
 
