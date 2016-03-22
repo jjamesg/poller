@@ -23,12 +23,13 @@ router.get('/register', function(req, res) {
 
 router.post('/register', function(req, res) {
     Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
+        console.log(req.body.username)
         if (err) {
-            return res.send("Username already exists.");
+            return res.send(null);
         }
 
         passport.authenticate('local')(req, res, function () {
-            res.redirect('/');
+            res.send(true);
         });
     });
 });
@@ -44,10 +45,10 @@ router.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
         console.log(err, user, info);
         if(err) return next(err);
-        if(!user) return res.send('Invalid username or password.');
+        if(!user) return res.send(null);
         req.logIn(user, function(err) {
             if (err) { return next(err); }
-            return res.redirect('/')
+            return res.send(user)
         });
     })(req, res, next)
 });

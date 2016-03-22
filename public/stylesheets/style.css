@@ -99,12 +99,26 @@ body {
 .popup {
     background-color: #fff ;
     color: #666;
+    width: 230px;
 }
 
 .popup .header {
     font-size: 16px;
     padding: 10px 20px;
     background-color: #F4F4F2;
+    position: relative;
+}
+
+.header button {
+    color: #666;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #E3E3E1;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }
 
 .popup .form-holder {
@@ -127,6 +141,11 @@ body {
     border: 0px solid #ddd;
     padding: 10px;
     margin: 10px 10px 10px 0px;
+    cursor: pointer;
+}
+
+.error-box, .error-boxr {
+    color: red;
 }
 
 /* main */

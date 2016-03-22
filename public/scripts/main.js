@@ -8,7 +8,6 @@ var Main = React.createClass({
         $.get(
             this.props.url + '/user',
             function(user) {
-                console.log('user', user)
                 this.setState({user: user})
             }.bind(this)
         );

@@ -15,24 +15,29 @@ block content
   //login popup
   #login.popup(style='display:none') 
     .header LOGIN
+      button.modal_close(type="button") X
     .form-holder
       p Sign in to view your polls
-      form(role='form', action="/login",method="post", style='max-width: 300px;')
-        input(type='text', name="username", placeholder='Enter Username')
-        input(type='password', name="password", placeholder='Password')
-        button(type='submit') Submit
-        button.modal_close(type="button") Cancel
+      input.username(type='text', name="username", placeholder='Enter Username')
+      input.password(type='password', name="password", placeholder='Password')
+      img.loading(src='/images/loading.gif')
+      .error-box
+      button.submitlog Submit
+      button.modal_close(type="button") Cancel
 
   //register popup
   #create.popup(style='display:none') 
     .header REGISTER
+      button.modal_close(type="button") X
     .form-holder
       p Create an account to save your polls.
-      form(role='form', action="/register",method="post", style='max-width: 300px;')
-        input(type='text', name="username", placeholder='Enter Username')
-        input(type='password', name="password", placeholder='Password')
-        button(type='submit') Submit
-        button.modal_close(type="button") Cancel
+      input.usernamer(type='text', name="username", placeholder='Enter Username')
+      input.passwordr(type='password', name="password", placeholder='Password')
+      img.loading(src='/images/loading.gif')
+      .error-boxr
+      button.submitreg Submit
+      button.modal_close(type="button") Cancel
+      
         
   #contentR
   if(view == 'main')
