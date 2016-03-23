@@ -255,6 +255,6 @@ $('.url-box').click(function() {
 var theData = {question: '', answers: ['','','','']};
 
 
-ReactDOM.render(<Main url='https://poller-jjamesg.c9users.io' />, document.getElementById('contentR'));
+ReactDOM.render(<Main url='https://pollerq.herokuapp.com/' />, document.getElementById('contentR'));
 
 
