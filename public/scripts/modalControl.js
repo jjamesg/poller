@@ -1,5 +1,6 @@
 $(function() {
     
+    
     $('.submitlog').click(function() {
         $.post(
             '/login',
