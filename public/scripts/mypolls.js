@@ -60,6 +60,6 @@ var Main = React.createClass({
 
 
 
-ReactDOM.render(<Main url='https://pollerq.herokuapp.com/' />, document.getElementById('contentR'));
+ReactDOM.render(<Main url='https://pollerq.herokuapp.com' />, document.getElementById('contentR'));
 
 
