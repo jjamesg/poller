@@ -124,6 +124,6 @@ var Results = React.createClass({
 var path = document.URL.split('/').reverse()[0];
 
 
-ReactDOM.render(<Main path={path} url='https://poller-jjamesg.c9users.io' />, document.getElementById('contentR'));
+ReactDOM.render(<Main path={path} url='https://pollerq.herokuapp.com' />, document.getElementById('contentR'));
 
 
