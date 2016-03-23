@@ -8,10 +8,13 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var cors = require('cors');
 
 var routes = require('./routes/index');
 
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -75,14 +78,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://poller-jjamesg.c9users.io'); 
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    
-    next();
-});
 
 
 
